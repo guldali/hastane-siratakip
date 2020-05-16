@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //myRef.setValue("Hello, World!");
 
-       // writeNewUser("Celil","Özsoy","28222097944","KBB3","Mehmet","11:30","5");
+       // writeNewUser("Celil","Özsoy","28222097994","KBB3","Mehmet","11:30","5");
       //  writeNewUser("Müberra","Kazak","17555986427","KBB3","Mehmet","11:45","6");
        // writeNewUser("Taner","Kazım","45669230158","KBB3","Mehmet","13:30","7");
       //  writeNewUser("Mustafa","Çamkesen","56989745230","KBB3","Mehmet","14:00","8");
@@ -64,20 +64,15 @@ public class MainActivity extends AppCompatActivity {
 
                         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
 
-
                             String kullanici=ad.getText().toString();
                             String tcsi=tc.getText().toString();
 
-                            //String deger1 = dataSnapshot.child("users").child("1").child("username").getValue().toString();
-                          //  String deger2 = dataSnapshot.child("users").child("1").child("tc").getValue().toString();
-
-
-                          // if(kullanici.equals(deger1) && tcsi.equals(deger2)){
+                         if(tcsi.length()==11){
                                 Intent intent = new Intent(getApplicationContext(),BilgilerActivity.class);
                                 intent.putExtra("bilgiler",tc.getText().toString());
                                 startActivity(intent);
-                          // }
-                          // else { sonuc.setText("bilgileriniz yanlış"); }
+                         }
+                          else { sonuc.setText("bilgileriniz yanlış"); }
 
                         }
 
@@ -85,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
+                        System.out.println("Okuma Başarısız: " + databaseError.getMessage());
 
                     }
                 });

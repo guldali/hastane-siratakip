@@ -39,10 +39,8 @@ public class BilgilerActivity extends AppCompatActivity {
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mMeetings);
         mListView.setAdapter(arrayAdapter);
 
-
         Query query = FirebaseDatabase.getInstance().getReference("message").child("users").orderByChild("tc").equalTo(bilgiler);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
-
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot childSnapShot : dataSnapshot.getChildren()) {
@@ -69,6 +67,7 @@ public class BilgilerActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("Okuma Başarısız: " + databaseError.getMessage());
 
             }
         });
@@ -83,47 +82,39 @@ public class BilgilerActivity extends AppCompatActivity {
                         System.out.println("Toplam Hasta Sayısı=" + numOfLikes);
                         sonuc.setText((String.valueOf(numOfLikes)));
                     }
+
                     else{
                         sonuc.setText("Hasta Bulunmamaktadır");
                     }
-                   // mevcutSira.setText(dataSnapshot.child("users").child("M744akkFWVvuIg-Kp-q").child("sira").getValue().toString());
-
-                   // Query query1=FirebaseDatabase.getInstance().getReference("message").child("users").child("1").orderByChild("sira");
-                   // System.out.println("first"+query1);
-                  //  mevcutSira.setText((String.valueOf(query1)));
-
-                   // Iterator iterator = dataSnapshot.getChildren().iterator();
-                    //System.out.println("iterator" + iterator.next());
 
                 }
 
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println("Okuma Başarısız: " + databaseError.getMessage());
 
             }
+        });
 
+        Query query1 = FirebaseDatabase.getInstance().getReference("message").child("users").limitToFirst(1);
+        query1.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                        String sira1 = (String) postSnapshot.child("sira").getValue();
+                        System.out.println("mevcut sıramız"+sira1);
+                        mevcutSira.setText(sira1);
+
+                    }
+
+            }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
-        //Query query1=FirebaseDatabase.getInstance().getReference("message").child("users").child("1").orderByChild("sira");
-        //System.out.println("first"+query1);
-        /*
-        oku.addValueEventListener(new ValueEventListener()  {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-
-
-
-                    }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });*/
     }
 }

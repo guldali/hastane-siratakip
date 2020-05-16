@@ -9,15 +9,18 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="218dp"
-        android:layout_height="66dp"
+        android:layout_width="280dp"
+        android:layout_height="64dp"
         android:text="Sıra Takip Sistemine Hoşgeldiniz"
+        android:textColor="@color/colorBordo"
+        android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextAd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585" />
+        app:layout_constraintVertical_bias="0.765" />
 
     <EditText
         android:id="@+id/editTextAd"
@@ -36,19 +39,20 @@
         android:id="@+id/editTextTc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="60dp"
         android:ems="10"
         android:hint="T.C"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="232dp"
+        android:layout_marginBottom="120dp"
         android:text="GİRİŞ YAP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
