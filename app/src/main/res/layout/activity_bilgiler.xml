@@ -4,60 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/buton_tasarimi"
     tools:context=".BilgilerActivity">
 
 
     <TextView
         android:id="@+id/sonuc"
-        android:layout_width="189dp"
-        android:layout_height="65dp"
-        android:layout_marginBottom="16dp"
-        android:text="Toplam Hasta Sayısı "
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20dp"
+        android:layout_width="103dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="8dp"
+        android:text="Sayı "
+        android:textAlignment="textStart"
+        android:textColor="@color/colorArkaPlan"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="287dp"
-        android:layout_height="33dp"
+        android:layout_width="301dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="52dp"
         android:gravity="center"
         android:text="Sıra Bilgileriniz"
-        android:textColor="@color/colorBordo"
+        android:textColor="@color/colorSiyah"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/liste"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/liste"
-        android:layout_width="311dp"
-        android:layout_height="341dp"
-        app:layout_constraintBottom_toTopOf="@+id/sonuc"
+        android:layout_width="335dp"
+        android:layout_height="451dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/mevcutSira"
-        android:layout_width="198dp"
-        android:layout_height="58dp"
-        android:text="Mevcut Sıra"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:text=" Sayı"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorMavi"
+        android:textSize="18dp"
         android:textStyle="bold"
-        android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="88dp"
+        android:text="Mevcut Sıra :"
+        android:textAlignment="center"
+        android:textColor="@color/colorMavi"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.946" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="190dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="8dp"
+        android:text="Toplam Hasta Sayısı :"
+        android:textColor="@color/colorArkaPlan"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

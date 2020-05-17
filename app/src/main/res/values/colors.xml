@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimaryDark">#051E5E</color>
+    <color name="colorAccent">#6BCCF8</color>
     <color name="colorBordo">#610512</color>
+    <color name="colorMavi">#046D9C</color>
+    <color name="colorArkaPlan">#A7DDF6</color>
+    <color name="colorSiyah">#111212</color>
 </resources>

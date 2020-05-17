@@ -46,11 +46,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //myRef.setValue("Hello, World!");
-
-       // writeNewUser("Celil","Özsoy","28222097994","KBB3","Mehmet","11:30","5");
-      //  writeNewUser("Müberra","Kazak","17555986427","KBB3","Mehmet","11:45","6");
-       // writeNewUser("Taner","Kazım","45669230158","KBB3","Mehmet","13:30","7");
-      //  writeNewUser("Mustafa","Çamkesen","56989745230","KBB3","Mehmet","14:00","8");
+        //writeNewUser("Celil","Özsoy","28222097994","KBB3","Mehmet","11:30","1");
+       // writeNewUser("Melike","Kazak","17555986427","KBB3","Mehmet","11:45","2");
+       // writeNewUser("Taner","Kazım","45669230158","KBB3","Mehmet","13:30","3");
+       // writeNewUser("Güldali","Özsoy","28222087944","KBB3","Mehmet","14:00","4");
         ad=findViewById(R.id.editTextAd);
         tc=findViewById(R.id.editTextTc);
         sonuc=findViewById(R.id.textView);
@@ -63,16 +62,21 @@ public class MainActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-
-                            String kullanici=ad.getText().toString();
+                            String kullaniciAdi=ad.getText().toString();
                             String tcsi=tc.getText().toString();
+                            if(kullaniciAdi.trim().equals("") )
+                            {
+                                sonuc.setText("Lütfen adınızı  giriniz");
+                            }
 
-                         if(tcsi.length()==11){
+                            else  if(tcsi.length()==11){
                                 Intent intent = new Intent(getApplicationContext(),BilgilerActivity.class);
                                 intent.putExtra("bilgiler",tc.getText().toString());
                                 startActivity(intent);
-                         }
-                          else { sonuc.setText("bilgileriniz yanlış"); }
+                            }
+                            else {
+                              sonuc.setText("bilgileriniz eksik veya hatalı");
+                            }
 
                         }
 

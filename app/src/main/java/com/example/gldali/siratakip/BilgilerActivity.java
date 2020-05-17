@@ -53,13 +53,13 @@ public class BilgilerActivity extends AppCompatActivity {
                     String poli = (String) childSnapShot.child("poliklinik").getValue();
                     String tc = (String) childSnapShot.child("tc").getValue();
 
-                    mMeetings.add(name);
-                    mMeetings.add(surname);
-                    mMeetings.add(tc);
-                    mMeetings.add(poli);
-                    mMeetings.add(doktor);
-                    mMeetings.add(sira);
-                    mMeetings.add(datetime);
+                    mMeetings.add("Ad="+name);
+                    mMeetings.add("Soyad="+surname);
+                    mMeetings.add("T.C ="+tc);
+                    mMeetings.add("Poliklinik="+poli);
+                    mMeetings.add("Doktor Adı="+doktor);
+                    mMeetings.add("Sıranız="+sira);
+                    mMeetings.add("zaman="+datetime);
 
                 }
 

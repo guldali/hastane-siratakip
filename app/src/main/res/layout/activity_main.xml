@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/buton_tasarimi"
     tools:context=".MainActivity">
 
 
@@ -12,15 +13,13 @@
         android:layout_width="280dp"
         android:layout_height="64dp"
         android:text="Sıra Takip Sistemine Hoşgeldiniz"
-        android:textColor="@color/colorBordo"
+        android:textColor="@color/colorSiyah"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextAd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.765" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextAd"
@@ -28,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:ems="10"
-        android:hint="Ad"
+        android:hint="Adınızı giriniz"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/editTextTc"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         android:ems="10"
-        android:hint="T.C"
+        android:hint="T.C giriniz"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,14 +49,32 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_width="132dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="148dp"
+        android:background="@drawable/buton_tasarimi"
         android:text="GİRİŞ YAP"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:text="SIRAMATİK"
+        android:textColor="@color/colorSiyah"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.948" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
