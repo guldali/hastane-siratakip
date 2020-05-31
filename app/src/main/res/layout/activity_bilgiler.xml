@@ -10,9 +10,9 @@
 
     <TextView
         android:id="@+id/sonuc"
-        android:layout_width="103dp"
+        android:layout_width="89dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24dp"
         android:text="Sayı "
         android:textAlignment="textStart"
         android:textColor="@color/colorArkaPlan"
@@ -25,8 +25,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="301dp"
-        android:layout_height="52dp"
+        android:layout_width="305dp"
+        android:layout_height="63dp"
         android:layout_marginTop="52dp"
         android:gravity="center"
         android:text="Sıra Bilgileriniz"
@@ -85,7 +85,7 @@
         android:layout_width="190dp"
         android:layout_height="45dp"
         android:layout_marginStart="88dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24dp"
         android:text="Toplam Hasta Sayısı :"
         android:textColor="@color/colorArkaPlan"
         android:textSize="18dp"

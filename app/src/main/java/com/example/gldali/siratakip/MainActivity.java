@@ -1,6 +1,7 @@
 package com.example.gldali.siratakip;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("message");
     DatabaseReference oku= FirebaseDatabase.getInstance().getReference("message");
-    Button giris, kayit;
+    Button giris;
     EditText ad,tc;
     TextView sonuc;
 
@@ -45,11 +46,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar actionBar =getSupportActionBar();
+        actionBar.hide();
         //myRef.setValue("Hello, World!");
+        //Firebase veritabanına veriler yazıldı
         //writeNewUser("Celil","Özsoy","28222097994","KBB3","Mehmet","11:30","1");
        // writeNewUser("Melike","Kazak","17555986427","KBB3","Mehmet","11:45","2");
-       // writeNewUser("Taner","Kazım","45669230158","KBB3","Mehmet","13:30","3");
-       // writeNewUser("Güldali","Özsoy","28222087944","KBB3","Mehmet","14:00","4");
+       // writeNewUser("Mustafa","Kazım","45669230158","KBB3","Mehmet","13:30","3");
+       // writeNewUser("Melike","Özsoy","28222087945","KBB3","Mehmet","14:00","4");
+       // writeNewUser("Ömer","Özsoy","28222087946","KBB3","Mehmet","14:05","5");
+      //  writeNewUser("Keziban","Özsoy","28222087956","KBB3","Mehmet","14:15","6");
+       // writeNewUser("Ayşegül","Özgür","28222087936","KBB3","Mehmet","14:25","7");
         ad=findViewById(R.id.editTextAd);
         tc=findViewById(R.id.editTextTc);
         sonuc=findViewById(R.id.textView);
@@ -62,16 +69,16 @@ public class MainActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                            String kullaniciAdi=ad.getText().toString();
-                            String tcsi=tc.getText().toString();
-                            if(kullaniciAdi.trim().equals("") )
+                            String kullaniciAdi=ad.getText().toString();//kullanıcının girdiği ad bilgisi kullaniciAdi değişkenine atandı.
+                            String tcsi=tc.getText().toString();//kullanıcının girdiği tc bilgisi tcsi  değişkenine atandı.
+                            if(kullaniciAdi.trim().equals("") )//eğer ad girilmemişse uyarı verildi.
                             {
                                 sonuc.setText("Lütfen adınızı  giriniz");
                             }
 
-                            else  if(tcsi.length()==11){
-                                Intent intent = new Intent(getApplicationContext(),BilgilerActivity.class);
-                                intent.putExtra("bilgiler",tc.getText().toString());
+                            else  if(tcsi.length()==11){// tc uzunuluğu 11 haneye eşit ise
+                                Intent intent = new Intent(getApplicationContext(),BilgilerActivity.class);//2. sayfaya geç
+                                intent.putExtra("bilgiler",tc.getText().toString());//tc bilgisini 2. sayfaya gönder
                                 startActivity(intent);
                             }
                             else {
